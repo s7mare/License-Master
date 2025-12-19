@@ -1,0 +1,72 @@
+server:
+  port: 23975
+  servlet:
+    context-path: /api/license
+
+app:
+  auth: true       #是否开启用户认证
+  private-key-path: ./keys/privateKeys.keystore #C:/Users/admin/Desktop/license_demo/privateKeys.keystore   #许可证私钥存储路径
+  license-store-path: ./temp/temp.lic #证书存储路径，已弃用
+  public-key-path: ./keys/publicCerts.keystore #C:/Users/admin/Desktop/license_demo/publicCerts.keystore #公钥存储路径
+  clean-job-day: 30    #清理过期多少天的证书记录
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.243:3306/licensesdb?useSSL=false&allowPublicKeyRetrieval=true&allowMultiQueries=true
+    username: licenseer
+    password: Libbowzuie89$nRw
+    druid:
+      max-active: 10
+      min-idle: 5
+      initial-size: 3
+      filters: stat,wall filters
+      filter:
+        stat: #
+          slow-sql-millis: 1000
+          logSlowSql: true
+          enabled: true
+        wall: #WallFilter
+          enabled: true
+          config:
+            drop-table-allow: false
+            multi-statement-allow: true
+            none-base-statement-allow: true
+
+  redis:
+    database: 1
+    host: 127.0.0.1 #120.24.150.206
+    port: 6379
+    password: Smt12345@
+
+logging:
+  level:
+    # 指定包设置debug级别info
+    top.top.gzii.license.mapper: debug
+
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+
+#mybaits配置
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: top.gzii.license.model
+  #mybatis:
+  # mapper-locations: classpath:mapper/*Mapper.xml
+  #type-aliases-package: cn.com.smart.studio.booking.model
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/*.xml
+  typeAliasesPackage:
+  type-aliases-package: top.gzii.license.model

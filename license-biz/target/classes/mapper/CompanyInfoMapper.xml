@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.gzii.license.mapper.CompanyInfoMapper">
+
+    <resultMap id="BaseResultMap" type="top.gzii.license.model.CompanyInfo">
+            <id property="id" column="id" />
+            <result property="name" column="name" />
+            <result property="code" column="code" />
+            <result property="contactPerson" column="contact_person" />
+            <result property="contactPhone" column="contact_phone" />
+            <result property="contactEmail" column="contact_email" />
+            <result property="address" column="address" />
+            <result property="deleted" column="deleted" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,code,contact_person,contact_phone,contact_email,
+        address,deleted
+    </sql>
+</mapper>

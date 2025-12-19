@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.gzii.license.mapper.GenerationRecordMapper">
+
+    <resultMap id="BaseResultMap" type="top.gzii.license.model.GenerationRecord">
+            <id property="id" column="id" />
+            <result property="paramId" column="param_id" />
+            <result property="companyId" column="company_id" />
+            <result property="companyName" column="company_name" />
+            <result property="systemId" column="system_id" />
+            <result property="systemName" column="system_name" />
+            <result property="userId" column="user_id" />
+            <result property="operator" column="operator" />
+            <result property="createTime" column="create_time" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,param_id,company_id,company_name,system_id,system_name,
+        user_id,operator,create_time
+    </sql>
+    <delete id="deleteExpireRecord">
+        delete from license_generation_record
+               where now()>date_add(end_time,interval #{day} day) limit 1000
+    </delete>
+</mapper>

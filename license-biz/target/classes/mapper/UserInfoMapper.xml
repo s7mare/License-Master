@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.gzii.license.mapper.UserInfoMapper">
+
+    <resultMap id="BaseResultMap" type="top.gzii.license.model.UserInfo">
+            <id property="id" column="id" />
+            <result property="username" column="username" />
+            <result property="nickName" column="nick_name" />
+            <result property="password" column="password" />
+            <result property="deleted" column="deleted" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,username,nick_name,password,deleted
+    </sql>
+    <select id="selectByUsername" resultType="top.gzii.license.model.UserInfo">
+        select * from license_user_info where deleted=0
+        and username= #{username}
+    </select>
+</mapper>

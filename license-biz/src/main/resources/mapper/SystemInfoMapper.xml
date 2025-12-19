@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.gzii.license.mapper.SystemInfoMapper">
+
+    <resultMap id="BaseResultMap" type="top.gzii.license.model.SystemInfo">
+            <id property="id" column="id" />
+            <result property="name" column="name" />
+            <result property="version" column="version" />
+            <result property="description" column="description" />
+            <result property="deleted" column="deleted" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,version,description,deleted
+    </sql>
+</mapper>

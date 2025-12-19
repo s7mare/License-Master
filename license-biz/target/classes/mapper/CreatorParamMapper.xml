@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.gzii.license.mapper.CreatorParamMapper">
+
+<!--    <resultMap id="BaseResultMap" type="top.gzii.license.model.CreatorParam">-->
+<!--            <result property="companyId" column="company_id" />-->
+<!--            <result property="systemId" column="system_id" />-->
+<!--            <result property="subject" column="subject" />-->
+<!--            <result property="privateAlias" column="private_alias" />-->
+<!--            <result property="keyPass" column="key_pass" />-->
+<!--            <result property="storePass" column="store_pass" />-->
+<!--            <result property="licensePath" column="license_path" />-->
+<!--            <result property="privateKeyStorePath" column="private_key_store_path" />-->
+<!--            <result property="issuedTime" column="issued_time" />-->
+<!--            <result property="expiryTime" column="expiry_time" />-->
+<!--            <result property="consumerType" column="consumer_type" />-->
+<!--            <result property="consumerAmount" column="consumer_amount" />-->
+<!--            <result property="descrption" column="descrption" />-->
+<!--            <result property="ipAddress" column="ip_address" />-->
+<!--            <result property="macAddress" column="mac_address" />-->
+<!--            <result property="cpuSerial" column="cpu_serial" />-->
+<!--            <result property="mainBoardSerial" column="main_board_serial" />-->
+<!--            <result property="deleted" column="deleted" />-->
+<!--    </resultMap>-->
+
+    <sql id="Base_Column_List">
+        company_id,system_id,subject,private_alias,key_pass,store_pass,
+        license_path,private_key_store_path,issued_time,expiry_time,consumer_type,
+        consumer_amount,descrption,ip_address,mac_address,cpu_serial,
+        main_board_serial,deleted
+    </sql>
+    <select id="pageInfo" resultType="top.gzii.license.vo.response.CreatorParamPageRespVo">
+        select
+            cp.id,
+            cp.company_id,
+            cp.system_id,
+            ci.name companyName,
+            si.name systemName,
+            cp.subject,
+            cp.issued_time,
+            cp.expiry_time
+            from license_creator_param cp left join license_company_info ci on
+                ci.deleted=0 and cp.company_id=ci.id
+            left join license_system_info si on
+                si.deleted =0 and cp.system_id= si.id
+        where cp.deleted=0
+        <if test="reqVo.companyName!=null and reqVo.companyName!='' ">
+            and ci.name like concat("%",#{reqVo.companyName},"%")
+        </if>
+        <if test="reqVo.systemName !=null and reqVo.systemName!='' ">
+            and si.name like concat("%",#{reqVo.systemName},"%")
+        </if>
+        <if test="reqVo.desc == true">
+            order by cp.id desc
+        </if>
+    </select>
+</mapper>
