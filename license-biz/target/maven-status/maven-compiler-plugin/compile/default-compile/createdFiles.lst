@@ -12,7 +12,6 @@ top\gzii\license\service\CreatorParamService.class
 top\gzii\license\common\license\WindowsServerInfos.class
 top\gzii\license\common\utils\RedisUtils.class
 top\gzii\license\license\AbstractServerInfos.class
-top\gzii\license\common\license\KeyToolExecutor.class
 top\gzii\license\WebApplication.class
 top\gzii\license\common\license\AbstractServerInfos.class
 top\gzii\license\model\GenerationRecord.class
@@ -29,7 +28,6 @@ top\gzii\license\model\UserInfo.class
 top\gzii\license\common\config\RedisTemplateConfig.class
 top\gzii\license\license\WindowsServerInfos.class
 top\gzii\license\mapper\CompanyInfoMapper.class
-top\gzii\license\common\license\LicenseVerify.class
 top\gzii\license\license\LinuxServerInfos.class
 top\gzii\license\model\SystemInfo.class
 top\gzii\license\vo\request\CreatorParamPageReqVo.class

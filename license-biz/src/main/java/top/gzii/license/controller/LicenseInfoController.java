@@ -61,7 +61,6 @@ public class LicenseInfoController {
     public Result insert(@RequestBody CreatorParam param){
         param.setPrivateKeyStorePath(privateKeyPath);
        param.setLicensePath(licenseStorePath);
-       param.setStorePass(publicKeyPath);
         service.save(param);
         return Result.success();
 }
