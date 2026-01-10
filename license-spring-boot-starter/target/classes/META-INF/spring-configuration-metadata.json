@@ -1,0 +1,84 @@
+{
+  "groups": [
+    {
+      "name": "license",
+      "type": "top.gzii.license.autofigure.LicenseProperty",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    }
+  ],
+  "properties": [
+    {
+      "name": "license.cache-enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否启用缓存",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.cache-ttl",
+      "type": "java.lang.Integer",
+      "description": "缓存有效期（秒）",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.error-code",
+      "type": "java.lang.Integer",
+      "description": "验证失败HTTP状态码",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.error-message",
+      "type": "java.lang.String",
+      "description": "验证失败错误消息",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.exclude-paths",
+      "type": "java.util.List<java.lang.String>",
+      "description": "拦截器排除路径",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.license-path",
+      "type": "java.lang.String",
+      "description": "License文件路径，默认路径为resources下",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.mode",
+      "type": "java.lang.String",
+      "description": "验证模式： global - 全局拦截器模式（默认） annotation - 注解验证模式 hybrid - 混合模式",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.public-alias",
+      "type": "java.lang.String",
+      "description": "公钥别名",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.public-keys-store-path",
+      "type": "java.lang.String",
+      "description": "公钥文件路径",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.store-pass",
+      "type": "java.lang.String",
+      "description": "访问公钥库的密码",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.strict",
+      "type": "java.lang.Boolean",
+      "description": "是否启用严格模式",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    },
+    {
+      "name": "license.subject",
+      "type": "java.lang.String",
+      "description": "证书主题",
+      "sourceType": "top.gzii.license.autofigure.LicenseProperty"
+    }
+  ],
+  "hints": []
+}

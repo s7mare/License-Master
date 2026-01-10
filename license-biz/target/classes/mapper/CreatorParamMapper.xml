@@ -17,7 +17,7 @@
 <!--            <result property="expiryTime" column="expiry_time" />-->
 <!--            <result property="consumerType" column="consumer_type" />-->
 <!--            <result property="consumerAmount" column="consumer_amount" />-->
-<!--            <result property="descrption" column="descrption" />-->
+<!--            <result property="description" column="description" />-->
 <!--            <result property="ipAddress" column="ip_address" />-->
 <!--            <result property="macAddress" column="mac_address" />-->
 <!--            <result property="cpuSerial" column="cpu_serial" />-->
@@ -28,7 +28,7 @@
     <sql id="Base_Column_List">
         company_id,system_id,subject,private_alias,key_pass,store_pass,
         license_path,private_key_store_path,issued_time,expiry_time,consumer_type,
-        consumer_amount,descrption,ip_address,mac_address,cpu_serial,
+        consumer_amount,description,ip_address,mac_address,cpu_serial,
         main_board_serial,deleted
     </sql>
     <select id="pageInfo" resultType="top.gzii.license.vo.response.CreatorParamPageRespVo">

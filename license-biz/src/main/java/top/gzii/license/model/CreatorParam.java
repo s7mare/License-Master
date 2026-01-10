@@ -10,8 +10,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 /**
@@ -89,7 +87,7 @@ public class CreatorParam implements Serializable {
     /**
      * 描述
      */
-    private String descrption;
+    private String description;
 
     /**
      * 允许的ip地址列表
@@ -144,7 +142,7 @@ public class CreatorParam implements Serializable {
             && (this.getExpiryTime() == null ? other.getExpiryTime() == null : this.getExpiryTime().equals(other.getExpiryTime()))
             && (this.getConsumerType() == null ? other.getConsumerType() == null : this.getConsumerType().equals(other.getConsumerType()))
             && (this.getConsumerAmount() == null ? other.getConsumerAmount() == null : this.getConsumerAmount().equals(other.getConsumerAmount()))
-            && (this.getDescrption() == null ? other.getDescrption() == null : this.getDescrption().equals(other.getDescrption()))
+            && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
             && (this.getIpAddress() == null ? other.getIpAddress() == null : this.getIpAddress().equals(other.getIpAddress()))
             && (this.getMacAddress() == null ? other.getMacAddress() == null : this.getMacAddress().equals(other.getMacAddress()))
             && (this.getCpuSerial() == null ? other.getCpuSerial() == null : this.getCpuSerial().equals(other.getCpuSerial()))
@@ -168,7 +166,7 @@ public class CreatorParam implements Serializable {
         result = prime * result + ((getExpiryTime() == null) ? 0 : getExpiryTime().hashCode());
         result = prime * result + ((getConsumerType() == null) ? 0 : getConsumerType().hashCode());
         result = prime * result + ((getConsumerAmount() == null) ? 0 : getConsumerAmount().hashCode());
-        result = prime * result + ((getDescrption() == null) ? 0 : getDescrption().hashCode());
+        result = prime * result + ((getDescription() == null) ? 0 : getDescription().hashCode());
         result = prime * result + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         result = prime * result + ((getMacAddress() == null) ? 0 : getMacAddress().hashCode());
         result = prime * result + ((getCpuSerial() == null) ? 0 : getCpuSerial().hashCode());
@@ -195,7 +193,7 @@ public class CreatorParam implements Serializable {
         sb.append(", expiryTime=").append(expiryTime);
         sb.append(", consumerType=").append(consumerType);
         sb.append(", consumerAmount=").append(consumerAmount);
-        sb.append(", descrption=").append(descrption);
+        sb.append(", description=").append(description);
         sb.append(", ipAddress=").append(ipAddress);
         sb.append(", macAddress=").append(macAddress);
         sb.append(", cpuSerial=").append(cpuSerial);

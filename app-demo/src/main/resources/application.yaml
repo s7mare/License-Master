@@ -1,0 +1,20 @@
+server:
+  port: 7000
+
+
+license:
+  mode: annotation #是否开启版权保护
+  subject: test #证书主题
+  #publicAlias: publicCert   #公钥别名，默认为publicCert
+  storePass: public_password1234  #访问密钥库的密码
+  licensePath: ./app-demo/license/test.lic #许可证文件路径
+  publicKeysStorePath: /file/publicCerts.keystore    #公钥库文件路径
+
+
+logging:
+  level:
+    top.gzii.license: DEBUG  # 或 TRACE，查看详细日志
+    org.springframework: DEBUG
+    # 或者更具体地
+    org.springframework.boot.autoconfigure: DEBUG
+    org.springframework.context.annotation: DEBUG
