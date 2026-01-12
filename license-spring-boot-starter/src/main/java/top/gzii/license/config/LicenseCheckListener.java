@@ -35,10 +35,9 @@ public class LicenseCheckListener implements ApplicationListener<ContextRefreshe
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        //root application context 没有parent
-        ApplicationContext context = event.getApplicationContext().getParent();
-        if(context == null){
-            if(StringUtils.isNotBlank(licenseProperty.getLicensePath())){
+
+
+            if(StringUtils.isNotEmpty(licenseProperty.getLicensePath())&&licenseProperty.getLicensePath().endsWith("lic")){
                 logger.info("++++++++ 开始安装证书 ++++++++");
 
                 LicenseVerifyParam param = new LicenseVerifyParam();
@@ -56,6 +55,10 @@ public class LicenseCheckListener implements ApplicationListener<ContextRefreshe
                 logger.info("++++++++ 证书安装结束 ++++++++");
                 logger.info("激活证书验证模块，模式：{}",licenseProperty.getMode());
             }
-        }
+            else {
+                logger.error("++++++证书路径或名称为空或文件类型错误，证书安装失败+++++++");
+                throw new RuntimeException("证书安装失败");
+            }
+
     }
 }

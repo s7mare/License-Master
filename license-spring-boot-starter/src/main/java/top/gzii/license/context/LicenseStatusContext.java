@@ -8,6 +8,10 @@ import top.gzii.license.autofigure.LicenseProperty;
 
 import java.util.Date;
 
+/**
+ *   证书缓存容器
+ */
+
 @Component
 public class LicenseStatusContext {
     private boolean ok;

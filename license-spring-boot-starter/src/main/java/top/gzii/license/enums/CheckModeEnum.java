@@ -1,5 +1,9 @@
 package top.gzii.license.enums;
 
+
+/**
+ *  证书模式枚举
+ */
 public enum CheckModeEnum {
     GLOBAL("global"),
     ANNOTATION("annotation"),

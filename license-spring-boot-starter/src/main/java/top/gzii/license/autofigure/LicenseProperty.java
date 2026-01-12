@@ -17,7 +17,7 @@ public class LicenseProperty {
     /**
      * 验证模式：
      * global - 全局拦截器模式（默认）
-     * annotation - 注解验证模式
+     * annotation - 注解验证模式（推荐）
      * hybrid - 混合模式
      */
     private String mode="global";

@@ -14,8 +14,8 @@ import java.util.prefs.Preferences;
 /**
  * License校验类
  *
- * @author zifangsky
- * @date 2018/4/20
+ * @author luoyu
+ * @date 2026/1/4
  * @since 1.0.0
  */
 public class LicenseVerify {
@@ -23,8 +23,8 @@ public class LicenseVerify {
 
     /**
      * 安装License证书
-     * @author zifangsky
-     * @date 2018/4/20 16:26
+     * @author luoyu
+     * @date 2026/1/4
      * @since 1.0.0
      */
     public synchronized LicenseContent install(LicenseVerifyParam param){

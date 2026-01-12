@@ -15,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import top.gzii.license.aop.ValidAspect;
 import top.gzii.license.config.LicenseCheckInterceptor;
 import top.gzii.license.config.LicenseCheckListener;
+import top.gzii.license.context.LicenseStatusContext;
 
 @Configuration
 @EnableAspectJAutoProxy
@@ -22,12 +23,11 @@ import top.gzii.license.config.LicenseCheckListener;
 @ComponentScan("top.gzii.license")
 public class LicenseConfiguration  {
     private static final Logger logger= LoggerFactory.getLogger(LicenseConfiguration.class);
-    @Autowired
-    private LicenseProperty licenseProperty;
+
  @Bean
  @ConditionalOnMissingBean
-   public LicenseCheckInterceptor licenseCheckInterceptor(){
-     return new LicenseCheckInterceptor();
+   public LicenseCheckInterceptor licenseCheckInterceptor(LicenseProperty licenseProperty, LicenseStatusContext licenseStatusContext){
+     return new LicenseCheckInterceptor(licenseProperty,licenseStatusContext);
  }
 
 

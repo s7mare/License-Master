@@ -3,12 +3,14 @@ server:
 
 
 license:
-  mode: annotation #是否开启版权保护
+  mode: global #global：全局拦截器模式（默认）；annotation注解模式（推荐），在方法上添加@ValidLicense
   subject: test #证书主题
   #publicAlias: publicCert   #公钥别名，默认为publicCert
   storePass: public_password1234  #访问密钥库的密码
   licensePath: ./app-demo/license/test.lic #许可证文件路径
   publicKeysStorePath: /file/publicCerts.keystore    #公钥库文件路径
+  cache-enabled: true  #是否开启缓存，默认为开启
+  cache-ttl: 300    #缓存时间，默认为300
 
 
 logging:

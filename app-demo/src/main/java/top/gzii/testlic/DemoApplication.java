@@ -13,7 +13,7 @@ import top.gzii.license.annotation.EnableLicense;
  *
  */
 
-
+git
 @SpringBootApplication
 @EnableLicense
 public class DemoApplication {
